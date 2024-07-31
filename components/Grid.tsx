@@ -1,11 +1,9 @@
 import React from 'react'
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid'
 import { bentoGridItems } from '@/data'
-import { TracingBeam } from './ui/TracingBeam'
 
 const Grid = () => {
   return (
-    // <TracingBeam className="px-100">
     <section id = "about">
         <BentoGrid>
             {bentoGridItems.map((item) =>(
@@ -21,7 +19,6 @@ const Grid = () => {
             ))}
         </BentoGrid>
     </section>
-    // </TracingBeam>
   )
 }
 
