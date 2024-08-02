@@ -4,7 +4,7 @@ import { bentoGridItems } from '@/data'
 
 const Grid = () => {
   return (
-    <section id = "about">
+    <section id = "about" className='mt-60'>
         <BentoGrid>
             {bentoGridItems.map((item) =>(
                 <BentoGridItem
@@ -15,6 +15,7 @@ const Grid = () => {
                     className={item.className}
                     img={item.img}
                     imgClassName={item.imgClassName}
+                    imglink={item.imglink}
                 />
             ))}
         </BentoGrid>

@@ -1,4 +1,6 @@
 import { cn } from "@/utils/cn";
+import LitUpButton from "./LitUpButton";
+import { IoOpenOutline } from "react-icons/io5";
 
 export const BentoGrid = ({
   className,
@@ -26,6 +28,7 @@ export const BentoGridItem = ({
   img,
   imgClassName,
   id,
+  imglink,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -33,6 +36,7 @@ export const BentoGridItem = ({
   img?: string;
   imgClassName?:string;
   id?:number;
+  imglink?: string;
 }) => {
   return (
     <div
@@ -68,11 +72,41 @@ export const BentoGridItem = ({
       }}
     >
       <div className="group-hover/bento:translate-x-2 group-hover/bento:translate-y-2 transition duration-200">
-        <div className={`font-sans text-lg lg:text-xl max-w-96 font-bold z-10 px-2`}>
+
+        <div className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10 px-2`}>
             {title}
         </div>
-        <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10 px-4">
+
+        <div className="font-sans font-extralight md:text-s lg:text-xl text-sm text-[#C1C2D3] z-10 px-4 py-5">
           {description}
+        </div>
+
+        
+
+      </div>
+
+      {id===3 && (
+          <a href="/8.1.pdf" target="_blank" rel="noopener noreferrer" className="-my-5">
+            <LitUpButton 
+              title = "Open File"
+              icon = {<IoOpenOutline size={25}/>}
+              position='right'
+              // otherClasses="mt-10"
+            />
+          </a>
+      )}
+
+      <div className={`${id === 1 && "flex justify-center"} h-95`}>
+        <div className="w-full h-90">
+          <a href={imglink} target="_blank" rel="noopener noreferrer">
+            {img && (
+              <img
+                src={img}
+                alt={img}
+                className={cn(imgClassName, "object-cover object-center rounded-3xl dark:border-white/[0.4]")}
+              />
+            )}
+          </a>
         </div>
       </div>
     </div>

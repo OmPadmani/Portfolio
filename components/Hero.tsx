@@ -10,6 +10,7 @@ import { AuroraBackground } from './ui/AuroraBackground'
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { LampContainer } from './ui/lamp';
+import { HiOutlineMail } from 'react-icons/hi';
 
 
 const Hero = () => {
@@ -62,28 +63,46 @@ const Hero = () => {
                     and this is my portfolio
                 </p>
 
-                <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex items-center justify-center gap-20">
-                    <a href="/demo2.html">
+                {/* <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex items-center relative justify-center gap-20"> */}
+                <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col md:flex-row items-center relative justify-center gap-6 md:gap-20">
+
+                    {/* <a href="/demo2.html">
                         <LitUpButton 
                             title = "OS Demo"
                             icon = {<BsFillTerminalFill size={25}/>}
                             position='right'
+                            otherClasses="mt-10"
                         />
-                    </a>
+                    </a> */}
+                    
                     <a href="https://www.linkedin.com/in/ompadmani/">
                         <LitUpButton 
                             title = "LinkedIn"
                             icon = {<FaLinkedin  size={25}/>}
                             position='right'
+                            otherClasses="mt-10"
                         />
                     </a>
+
                     <a href="https://www.github.com/OmPadmani?tab=repositories/">
                         <LitUpButton 
                             title = "GitHub"
                             icon = {<FaGithub  size={25}/>}
                             position='right'
+                            otherClasses="mt-10"
                         />
                     </a>
+                    
+                    <LitUpButton 
+                        title = "Copy Email"
+                        icon = {<HiOutlineMail size={25}/>}
+                        position='right'
+                        otherClasses="mt-10"
+                        handleClick = {() => {
+                                    navigator.clipboard.writeText("ompadmani@gmail.com");
+                                    alert('Copied!');
+                                    }}
+                    />
                 </div>
 
             </div>
