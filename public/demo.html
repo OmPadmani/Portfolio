@@ -1,79 +1,176 @@
 <!doctype html>
-<style>
-    @font-face
-    {
-        font-family: "Web IBM VGA 8x16";
-        src: url("./demo/Web437_IBM_Model3x_Alt4.woff") format("woff");
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Demo</title>
+    <style>
+        @font-face {
+            font-family: "Web IBM VGA 8x16";
+            src: url("./demo/Web437_IBM_Model3x_Alt4.woff") format("woff");
+        }
 
-    #screen_container
-    {
-        border: 4px solid #707070e0;
-        padding: 10px;
-        margin: auto;
-        width: 800px;
-    }
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-width: 880px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-    #emu_text
-    {
-        white-space: pre;
-        font-family: "Web IBM VGA 8x16";
-        font-style: normal;
-        font-size: 20px;
-        line-height: 20px;
-    }
+        #backButton {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-width:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            height: 20vh;
+            margin-left: 5vw;
+            margin-top: 15vh;
+        }
 
-    #emu_screen
-    {
-        display: none;
-    }
+        #screen_container {
+            border: 4px solid #707070e0;
+            padding: 10px;
+            width: 800px;
+            background-color: black;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px; /* Added rounded corners */
+        }
 
-    body
-    {
-        min-width: 880px;
-    }
+        #emu_text {
+            white-space: pre;
+            font-family: "Web IBM VGA 8x16";
+            font-style: normal;
+            font-size: 20px;
+            line-height: 20px;
+            color: #33ff33;
+        }
 
-    
-</style>
-<script src="./demo/second.js"></script>
-<script>
-    "use strict";
-    window.onload = function()
-    {
-        var emulator = window.emulator = new V86Starter({
-            wasm_path: "./demo/v862.wasm",
-            memory_size: 128 * 1024 * 1024,
-            vga_memory_size: 8 * 1024,
-            screen_container: document.getElementById("screen_container"),
-            bios: {
-                url: "./demo/sea.bin",
-            },
-            vga_bios: {
-                url: "./demo/vga.bin",
-            },
-            hda: {
-                url: "./demo/mp3.img",
-            },
-            autostart: true,
-        });
-    }
-</script>
-<title>OS Demo</title>
-<h2 style="text-align: center; font-family:'Web IBM VGA 8x16';">x86 Operating System Demo</h2>
+        #emu_screen {
+            display: none;
+        }
 
-<!-- <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">x86 Operating System Demo</h2> -->
-<!-- <hr> -->
-<body style="background-color: lightgray;">
-    <div id="screen_container" style="background-color: black;">
+        h2 {
+            text-align: center;
+            font-family: "Web IBM VGA 8x16";
+            margin-top: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: "Web IBM VGA 8x16";
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #description {
+            text-align: center;
+            font-family: "Web IBM VGA 8x16";
+            color: #333;
+        }
+        #options {
+            text-align: left;
+            font-family: "Web IBM VGA 8x16";
+            color: #333;
+        }
+        b {
+            font-weight: normal;
+        }
+
+        .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: 2px solid #0a8a0a;
+        border-radius: 15px;
+        }
+
+        .button:hover {
+        background-color: #0a8a0a;
+        color: white;
+        }
+    </style>
+    <script src="./demo/second.js"></script>
+    <script>
+        "use strict";
+        window.onload = function() {
+            var emulator = window.emulator = new V86Starter({
+                wasm_path: "./demo/v862.wasm",
+                memory_size: 128 * 1024 * 1024,
+                vga_memory_size: 8 * 1024,
+                screen_container: document.getElementById("screen_container"),
+                bios: {
+                    url: "./demo/sea.bin",
+                },
+                vga_bios: {
+                    url: "./demo/vga.bin",
+                },
+                hda: {
+                    url: "./demo/mp3.img",
+                },
+                autostart: true,
+            });
+        }
+    </script>
+</head>
+
+<div id="backButton">
+    <a href="/">
+        <button class="button"> 
+            Back
+        </button>
+    </a>
+</div>
+
+<body>
+
+    <h1 style="color:white;">x86 Operating System Demo</h1>
+    <div id="screen_container">
         <div id="emu_text"></div>
         <canvas id="emu_screen"></canvas>
     </div>
-    <p id="description" style="text-align: center; font-family:'Web IBM VGA 8x16';">
-        <b>Press Alt+F1/F2/F3 to switch between the 3 terminals. <br>
-        Refresh the page to reset the emulator.<br>If the OS doesn't load correctly at first, it should fix on a refresh.<br>
+    <p id="description" style="color:white;">
+        <b>Press Alt+F1/F2/F3 to switch between the 3 terminals.<br>
+        Refresh the page to reset the emulator.<br>
+        If the OS doesn't load correctly at first, it should fix on a refresh.</b>
     </p>
-    <!-- <p id="popup_text">
-        <b><a href="JavaScript:popUp();">Open in a Popup Window</a></b>
-    </p> -->
+    <p id="options" style="color:white;">
+        <b><br>Commands to enter in the terminal:<br>
+        ls<br>
+        fish (plays an animation of fish)<br>
+        grep &lt;text to search for&gt;<br>
+        cat &lt;filename&gt;<br>
+        shell (runs a new shell program, can have 6 open at a time including the 3 base shells for each terminal)<br>
+        exit (exits the current shell program)<br>
+        counter (lets you choose an option to count to)<br>
+        pingpong (plays a neverending pingpong animation)<br>
+        hello<br>
+        </b>
+    </p>
+    <p id="options" style="color:white;">
+        <b>Thanks to Peizhe Liu for his help in emulating the OS on a website!
+        </b>
+    </p>
 </body>
-<hr>
+</html>

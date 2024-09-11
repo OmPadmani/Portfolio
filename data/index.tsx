@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
     { name: "Testimonials", link: "#testimonials" },
     { name: "Contact", link: "#contact" },
-  ];
+];
   
   export const bentoGridItems = [
     {
@@ -156,3 +158,59 @@ export const navItems = [
 //       img: "/link.svg",
 //     },
 //   ];
+
+// export const cards = [
+// {
+// description: "Lana Del Rey",
+// title: "Summertime Sadness",
+// src: "/IMG_9020.jpg",
+// ctaText: "Explore",
+// ctaLink: "https://ui.aceternity.com/templates",
+// content: () => {
+//     return (
+//     <p>
+//         Lana Del Rey, an iconic American singer-songwriter, is celebrated for
+//         her melancholic and cinematic music style. Born Elizabeth Woolridge
+//         Grant in New York City, she has captivated audiences worldwide with
+//         her haunting voice and introspective lyrics. <br /> <br /> Her songs
+//         often explore themes of tragic romance, glamour, and melancholia,
+//         drawing inspiration from both contemporary and vintage pop culture.
+//         With a career that has seen numerous critically acclaimed albums, Lana
+//         Del Rey has established herself as a unique and influential figure in
+//         the music industry, earning a dedicated fan base and numerous
+//         accolades.
+//     </p>
+//     );
+// },
+// },
+// ];
+export const cards = [
+  {
+    description: "Founder, CEO & CTO",
+    title: "Madhav KSV",
+    src: "/IMG_9020.jpg",
+    ctaText: "https://ui.aceternity.com/templates",
+    ctaLink: "#",
+    content: () => {
+      return (
+        <p>
+          Leading our innovative team is Madhav, an accomplished IIT Kharagpur graduate with over 18 years of industry experience. His impressive career includes key roles at top-tier companies like Nvidia and HP, where he honed his hands-on coding skills and built a strong delivery track record.  Madhavs enthusiasm for learning new technologies and mentoring teams underpins our dedication to excellence and innovation. Under his leadership, we are committed to delivering state-of-the-art solutions, building a strong technology team and fostering a culture of continuous growth and technological advancement.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Founder, CIO & COO",
+    title: "Akkiraju Hari Kishore",
+    src: "/IMG_9020.jpg",
+    ctaText: "https://ui.aceternity.com/templates",
+    ctaLink: "#",
+    content: () => {
+      return (
+        <p>
+          Hari, a passionate advocate for testing as a service, brings over 26 years of IT industry experience to our leadership team. With extensive IT delivery expertise spanning start-ups, product companies, and both captive and vendor organizations, he is well-versed in digital transformation and transitioning work from onshore to offshore. <br /> <br /> His robust background includes over a decade of coding experience in application development and maintenance. Hari has held leadership roles at tech giants such as Wells Fargo and Infosys, showcasing his ability to drive innovation and excellence across diverse environments.
+        </p>
+      );
+    },
+  },
+];

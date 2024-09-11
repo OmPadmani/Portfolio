@@ -65,15 +65,6 @@ const Hero = () => {
 
                 {/* <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex items-center relative justify-center gap-20"> */}
                 <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col md:flex-row items-center relative justify-center gap-6 md:gap-20">
-
-                    {/* <a href="/demo2.html">
-                        <LitUpButton 
-                            title = "OS Demo"
-                            icon = {<BsFillTerminalFill size={25}/>}
-                            position='right'
-                            otherClasses="mt-10"
-                        />
-                    </a> */}
                     
                     <a href="https://www.linkedin.com/in/ompadmani/">
                         <LitUpButton 
@@ -93,16 +84,17 @@ const Hero = () => {
                         />
                     </a>
                     
-                    <LitUpButton 
-                        title = "Copy Email"
-                        icon = {<HiOutlineMail size={25}/>}
-                        position='right'
-                        otherClasses="mt-10"
-                        handleClick = {() => {
-                                    navigator.clipboard.writeText("ompadmani@gmail.com");
-                                    alert('Copied!');
-                                    }}
-                    />
+                    <a href="mailto:ompadmani@gmail.com">
+                        <LitUpButton 
+                            title = "Email Me"
+                            icon = {<HiOutlineMail size={25}/>}
+                            position='right'
+                            otherClasses="mt-10"
+                            handleClick = {() => {
+                                        navigator.clipboard.writeText("ompadmani@gmail.com");
+                                        }}
+                        />
+                    </a>
                 </div>
 
             </div>
