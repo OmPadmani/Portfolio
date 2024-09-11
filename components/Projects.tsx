@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react'
-import { ExpandableCardDemo } from './ui/projectTemplate'
+// import { ExpandableCardDemo } from './ui/projectTemplate'
 import LitUpButton from './ui/LitUpButton';
 import { BsFillTerminalFill } from 'react-icons/bs';
 import Link from 'next/link';
@@ -23,7 +23,7 @@ const Projects = () => {
                     </div>
 
                     <div className="font-sans font-extralight md:text-s lg:text-xl text-sm text-[#C1C2D3] z-10 px-4 py-5">
-                        I collaborated with a group to design and develop an operating system from scratch for a class project. The operating system consisted of a file system, paging, multiple terminals with round robin scheduling, IDT, keyboard handler, assembly linkage, system calls, and user level program execution. Since the code is from a class, I can't post it on Github. 
+                        I collaborated with a group to design and develop an operating system from scratch for a class project. The operating system consisted of a file system, paging, multiple terminals with round robin scheduling, IDT, keyboard handler, assembly linkage, system calls, and user level program execution. Since the code is from a class, I can&apos;t post it on Github. 
                         However, I have an emulation for it setup at the link below if you would like to try it out!
                         <br></br>Technologies used: x86, C
                     </div>
