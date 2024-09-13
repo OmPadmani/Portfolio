@@ -52,7 +52,7 @@ export const EvervaultCard = ({
             <span className="dark:text-white text-black z-20">
                 <img 
                 src={img}
-                alt={img}/>
+                alt="Badge"/>
             </span>
           </div>
         </div>
