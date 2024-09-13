@@ -21,7 +21,7 @@ export const navItems = [
     {
       id: 2,
       title: "Hobbies",
-      description: "I enjoy taking photos occasionally either on my phone or my Nikon D5100 and then editing them in lightroom. Below is a linked photo if you want to see more. Additionally I enjoy to play pickleball with my friends sometimes.",
+      description: "I enjoy taking photos occasionally either on my phone or my Nikon D5100 and then editing them in lightroom. Below is a linked photo if you want to see more. Additionally I enjoy to play pickleball with my friends.",
       className: "lg:col-span-2 md:col-span-3 md:row-span-4 ",
       imgClassName: "mb-12",
       titleClassName: "justify-start",
