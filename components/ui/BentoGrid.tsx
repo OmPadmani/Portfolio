@@ -86,7 +86,7 @@ export const BentoGridItem = ({
       </div>
 
       {id===3 && (
-          <a href="/OmPadmani-Resume.pdf" target="_blank" rel="noopener noreferrer" className="-my-5">
+          <a href="/OmPadmani_Resume.pdf" target="_blank" rel="noopener noreferrer" className="-my-5">
             <LitUpButton 
               title = "Open File"
               icon = {<IoOpenOutline size={25}/>}
